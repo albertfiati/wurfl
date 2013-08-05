@@ -7,11 +7,11 @@ $wurflInfo = $wurflManager->getWURFLInfo();
 if (isset($_GET['ua']) && trim($_GET['ua'])) {
 	$ua = $_GET['ua'];
 	$requestingDevice = $wurflManager->getDeviceForUserAgent($_GET['ua']);
-	print $ua;
 } else {
 	$ua = $_SERVER['HTTP_USER_AGENT'];
 	// This line detects the visiting device by looking at its HTTP Request ($_SERVER)
 	$requestingDevice = $wurflManager->getDeviceForHttpRequest($_SERVER);
+	print($ua);
 }
 
 $resultJSON = json_encode(
@@ -26,5 +26,6 @@ $resultJSON = json_encode(
 							)
 						);
 					
-print("$resultJSON");
+//print($resultJSON);
+
 ?>
